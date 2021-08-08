@@ -3,27 +3,68 @@ body {
     margin: 60px;
 }
 
+.container {
+    width: 75%;
+    margin: auto;
+    border: double gray 3px;
+    padding: 10px;
+}
+
 header {
     background-color: aqua;
     margin-bottom: 15px;
     height: 50px;
     padding: 15px;
     border: blue double 2px;
-    border-radius: 3px;
+    border-radius: 10px;
+}
+
+nav {
+    border: blue double 2px;
+    border-radius: 10px;
+    width: 25%;
+    margin-left: auto;    
 }
 
 main {
-    background-color: blue;
+    background-color: aqua;
+    border: red double 2px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+article {
+    background-color: aqua;
+    border: blue double 2px;
+    border-radius: 10px;
+
+}
+
+section {
+    background-color: aqua;
+    border: blue double 2px;
+    border-radius: 10px;
 
 }
 
 aside {
-    background-color: red;
+    background-color: aqua;
+    border: blue double 2px;
+    border-radius: 10px;
+    width: 25%;
+}
+
+figure {
+    background-color: aqua;
+    border: blue double 2px;
+    border-radius: 10px;
 
 }
 
 footer {
-    background-color: orange;
+    border: blue double 2px;
+    background-color: aqua;
+    border-radius: 10px;
 
 }
 
