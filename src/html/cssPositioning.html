@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 1.5em;
+        }
+        .parent {
+            background-color: lightblue;
+            border: blue solid 2px;
+            border-radius: 5px;
+            width: 60%;
+            height: 400px;
+        }
+
+        .child {
+            height: 100px;
+            background-color: lightgreen;
+        }
+
+        .child-one {
+            background-color: lightgreen;
+        }
+
+        .child-two {
+            background-color: lightcoral;
+        }
+
+        .child-three {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Positioning</h1>
+    <table width="60%" border="2">
+        <thead>
+            <tr align="center"><td colspan="2"><h3>CSS Position Values</h3></td></tr>
+            <tr><th>Value</th><th>Definition</th></tr>
+        </thead>
+        <tbody>
+            <tr><td width="30%">static</td><td width="70%">Default value.  No positioning applied.</td></tr>
+            <tr><td>relative</td><td>Positions the element, using top, right, bottom and left, relative to the ancestor which has positioning specified, and still takes up its original space.</td></tr>
+            <tr><td>absolute</td><td>Same as relative except its place is NOT held, so subsequent elements display as if it is not there.</td></tr>
+            <tr><td>fixed</td><td>Positions the element using top, right, bottom and left, relative to the viewport.</td></tr>
+            <tr><td>sticky</td><td>Same as relative until page is scrolled and positioning value is met, then it is positioned relative to viewport.</td></tr>
+        </tbody>
+    </table>
+
+    <div class="parent">
+        Parent
+        <div class="child-one child">One</div>
+        <div class="child-two child">Two</div>
+        <div class="child-three child">Three</div>
+    </div>
+    <div></div>
+</body>
+
+</html>

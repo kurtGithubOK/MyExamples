@@ -1,0 +1,28 @@
+body {
+    margin: 20px;
+    line-height: 1.5;
+}
+
+.shaded {
+    background-color: aqua;
+    border: blue solid thin;
+    border-radius: 5px;
+}
+
+.widthAndMargins {
+    width: 200px;
+    margin: auto;
+}
+
+.maxWidthAndMargins {
+    max-width: 600px;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
