@@ -31,27 +31,34 @@ main {
     border: red double 2px;
     border-radius: 10px;
     margin-bottom: 20px;
+    padding: 0px 10px;
+    position: relative;
 }
 
 article {
     background-color: aqua;
     border: blue double 2px;
     border-radius: 10px;
-
+    width: 60%;
+    margin-bottom: 15px;
 }
 
 section {
     background-color: aqua;
     border: blue double 2px;
     border-radius: 10px;
-
+    width: 60%;
+    margin-bottom: 15px;
 }
 
 aside {
     background-color: aqua;
     border: blue double 2px;
     border-radius: 10px;
-    width: 25%;
+    width: 40%;
+    position: absolute;
+    right: 15px;
+    top: 15px;
 }
 
 figure {
@@ -65,7 +72,7 @@ footer {
     border: blue double 2px;
     background-color: aqua;
     border-radius: 10px;
-
+    margin-bottom: 15px;
 }
 
 .block {
