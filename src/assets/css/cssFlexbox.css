@@ -1,0 +1,56 @@
+.container {
+  background-color: pink;
+  width: 800px;
+  height: 800px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.large {
+  background-color: red;
+  width: 600px;
+  height: 400px;
+  margin: 20px;
+}
+
+.small {
+  background-color: mediumblue;
+  width: 300px;
+  height: 100px;
+  margin: 20px;
+}
+
+
+
+
+
+
+
+.container2 {
+  background-color: salmon;
+  width: 800px;
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.item {
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.group {
+  border: black 1px solid;
+}
+

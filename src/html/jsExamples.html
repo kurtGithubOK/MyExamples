@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/jsExamples.css" />
+    <title>Javascript Examples</title>
+</head>
+
+<body>
+    <h1>Javascript Examples</h1>
+    <h3>Here are some examples of Javascript I reviewed in preparation for technical interviews.</h3>
+
+    <table>
+        <tbody>
+            <tr>
+                <td width="30%">JS Data Types</td>
+                <td width="70%">
+                    <code>string</code> - Compare using === or !==<br />
+                    <code>number</code> - Note: number.toString() available!<br />
+                    <code>boolean</code> - true | false. No quotes.<br />
+                    <code>undefined</code> - Variable with NO initial value.<br />
+                    <code>null</code> - Variable with a value but it is empty. Typeof rtns object (!?).<br />
+                    <code>Symbol</code> - Don't know how this is used.
+                </td>
+            </tr>
+            <tr>
+                <td>String method .substring(startIndex, endIndex)</td>
+                <td><code>
+                    console.log("hello".substring(1, 3)) // el
+                </code></td>
+            </tr>
+            <tr>
+                <td>String method .substr(startIndex, numChars-1)</td>
+                <td><code>
+                    console.log("hello".substr(2, 2)) // ll
+
+                </code></td>
+            </tr>
+            <tr>
+                <td>Iterating over a string. Note: Use 'OF', not 'IN'!</td>
+                <td>
+                    <code>
+                        const myString = "hello!";<br/>
+                        for(let char of myString) {<br/>
+                            console.log(char);<br/>
+                        }                        
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>String method .charAt()</td>
+                <td>
+                    <code>
+                        const myString = "hello!";<br/>
+                        for(let i=0 ; i&lt;myString.length ; i++) {<br/>
+                            console.log(myString[i]);<br/>
+                        }
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>String method .includes()</td>
+                <td>
+                    <code>
+                        console.log("hello!".includes('o')); // true
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>The prefered method of cloning an object.
+                    <ul>
+                        <li>1st arg - Object to start with (usually empty)</li>
+                        <li>2nd arg - Object to clone (copy)</li>
+                        <li>3rd arg - Any overrides in copied object</li>
+                    </ul>
+                </td>
+                <td>
+                    <code>
+                        const myCat = { name: 'Lucky', age: 11 };<br/>
+                        const myCopyCat = Object.assign({}, myCat, { name: 'LuckyChance' });<br/>
+                        console.log(myCopyCat.name); // LuckyChance<br/>
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>Title Copy!</td>
+                <td>
+                    <code>
+                        code here.
+                    </code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+</body>
+
+</html>

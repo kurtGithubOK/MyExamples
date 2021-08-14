@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image tags vs. divs</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+
+        h1 {
+            text-decoration: underline;
+            text-align: center;
+        }
+        .imgDiv1 {
+            background-image: url('../assets/images/300x200.png');
+            background-repeat: no-repeat;
+        }
+        .imgDiv2 {
+            background-image: url('../assets/images/300x200.png');
+            background-repeat: no-repeat;
+            height: 200px;
+        }
+        .imgDiv3 {
+            background-image: url('../assets/images/300x200.png');
+            background-repeat: no-repeat;
+            height: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>&lt;img&gt; tags vs. &lt;div&gt; tags with background-image.</h1>
+    <h2>First, img tags (image is: 300 x 200).</h2>
+
+    <h3>Test 1) img tag, no dims:</h3>
+    <p>image displayed actual size.</p>
+    <p>If viewport resized smaller than image, horizontal scroll bars appear.</p>
+    <img src="../assets/images/300x200.png" />
+    <hr/>
+
+    <h3>Test 2) img tag, with larger than actual dims:</h3>
+    <p>Image displayed with specified dimensions.</p>
+    <p>If viewport resized smaller than image, horizontal scroll bars appear.</p>
+    <img src="../assets/images/300x200.png" width="600" height="400" />
+    <hr/>
+
+    <h3>Test 3) img tag, with dims in %:</h3>
+    <p>When window resized, image resizes proportionately!</p>
+    <img src="../assets/images/300x200.png" width=40% height=30% />
+    <hr/>
+
+    <br/><br/>
+    <h2>Second, div tags with background image set.  (same image, background-repeat: no-repeat;).</h2>
+
+    <h3>Test 4) div tag, no dimensions.</h3>
+    <p>Doesn't display without content just like any div tag wouldn't.</p>
+    <div class="imgDiv1"></div>
+    <hr/>
+
+    <h3>Test 5) div tag, with height=200px dimension.</h3>
+    <p>height dimension is required!</p>
+    <p>If viewport resized images retains size.</p>
+    <div class="imgDiv2"></div>
+    <hr/>
+
+    <h3>Test 6) div tag, with height=%</h3>
+    <p>Doesn't work!</p>
+    <div class="imgDiv3"></div>
+    <hr/>
+
+
+
+</body>
+
+</html>
