@@ -26,47 +26,59 @@
                     <code>Symbol</code> - Don't know how this is used.
                 </td>
             </tr>
+
+            <tr>
+                <td colspan="2">
+                    <h2>Strings:</h2>
+                </td>
+            </tr>
             <tr>
                 <td>String method .substring(startIndex, endIndex)</td>
-                <td><code>
+                <td><code><pre>
                     console.log("hello".substring(1, 3)) // el
-                </code></td>
+                </pre></code></td>
             </tr>
             <tr>
                 <td>String method .substr(startIndex, numChars-1)</td>
-                <td><code>
+                <td><code><pre>
                     console.log("hello".substr(2, 2)) // ll
-
-                </code></td>
+                </pre></code></td>
             </tr>
             <tr>
                 <td>Iterating over a string. Note: Use 'OF', not 'IN'!</td>
                 <td>
-                    <code>
-                        const myString = "hello!";<br/>
-                        for(let char of myString) {<br/>
-                            console.log(char);<br/>
+                    <code><pre>
+                        const myString = "hello!";
+                        for(let char of myString) {
+                            console.log(char);
                         }                        
-                    </code>
+                    </pre></code>
                 </td>
             </tr>
             <tr>
                 <td>String method .charAt()</td>
                 <td>
-                    <code>
-                        const myString = "hello!";<br/>
-                        for(let i=0 ; i&lt;myString.length ; i++) {<br/>
-                            console.log(myString[i]);<br/>
+                    <code><pre>
+                        const myString = "hello!";
+                        for(let i=0 ; i&lt;myString.length ; i++) {
+                            console.log(myString[i]);
                         }
-                    </code>
+                    </pre></code>
                 </td>
             </tr>
             <tr>
                 <td>String method .includes()</td>
                 <td>
-                    <code>
+                    <code><pre>
                         console.log("hello!".includes('o')); // true
-                    </code>
+                    </pre></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2">
+                    <h2>Objects:</h2>
                 </td>
             </tr>
             <tr>
@@ -78,19 +90,69 @@
                     </ul>
                 </td>
                 <td>
-                    <code>
-                        const myCat = { name: 'Lucky', age: 11 };<br/>
-                        const myCopyCat = Object.assign({}, myCat, { name: 'LuckyChance' });<br/>
-                        console.log(myCopyCat.name); // LuckyChance<br/>
-                    </code>
+                    <code><pre>
+                        const myCat = { name: 'Lucky', age: 11 };
+                        const myCopyCat = Object.assign({}, myCat, { name: 'LuckyChance' });
+                        console.log(myCopyCat.name); // LuckyChance
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>4 ways to make objects:
+                    <ul>
+                        <li>Object literals:</li>
+                        <li>Constructor functions</li>
+                        <li>Using Object.create(...)</li>
+                        <li>ES6 Classes</li>
+                    </ul>
+                </td>
+                <td>
+                    <code><pre>
+                        const cat = {
+                            name: 'Lucky Chance',
+                            color: 'gray'
+                        };
+                        console.log(cat); // { name: 'Lucky Chance', color: 'gray' }
+                    </pre></code>
+                    <code><pre>
+                        function Cat() {
+                            this.name = 'LuckyChance';
+                            this.makeSound = function() {
+                                return 'meow!';
+                            }
+                        }
+                        const cat = new Cat();
+                        console.log(cat.makeSound()); // meow!
+                    </pre></code>
+                    <code><pre>
+                        const cat = Object.create(Object.prototype,
+                        {
+                            name: {
+                                value: 'Lucky Chance',
+                                enumerable: true,
+                                writable: true,
+                                configurable: true
+                            },
+                            color: {
+                                value: 'gray',
+                                enumerable: true,
+                                writable: true,
+                                configurable: true
+                            }
+                        });
+                    console.log(cat) // { name: 'Lucky Chance', color: 'gray' }
+                    </pre></code>
+                    <code><pre>
+                        code here.
+                    </pre></code>
                 </td>
             </tr>
             <tr>
                 <td>Title Copy!</td>
                 <td>
-                    <code>
+                    <code><pre>
                         code here.
-                    </code>
+                    </pre></code>
                 </td>
             </tr>
         </tbody>
