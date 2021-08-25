@@ -54,7 +54,7 @@ This is a block quote:
 Code:  Use backticks, not forward ticks like I do: `<html>`,
 and here is a JS function:
 
-```
+```[bash|python]
     function myFunction() {
         <statements here ...>
     }

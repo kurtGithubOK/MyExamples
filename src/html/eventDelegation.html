@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul {
+            border: 1px black solid;
+            width: 40%;
+        }
+        #myList li {
+            margin: 20px;
+            border: 1px black solid;
+            width: 200px;
+        }
+    </style>
+    <title>Event Delegation</title>
+</head>
+
+<body>
+    <h1>Event Delegation</h1>
+    <h4>Event delegation is a technique handling click events form a container of nested child elements (items).
+        If an item is clicked, the event is bubbled-up to the container where it is handled.
+        If the target of the event is of the type of the item (ex: &lt;li&gt; tag) it can be handled as desired.
+        This allows avoiding needing to register event listeners on each item.
+    </h4>
+
+    <p>
+        Example: Here is a unordered list of items. When an item is clicked I want to know 
+        from which item the event originated.
+    </p>
+
+    <ul id="myList">Unordered List:
+        <li>apples</li>
+        <li>oranges</li>
+        <li>bananas</li>
+    </ul>
+
+    <p>
+        Steps:
+        <ol>
+            <li>Add an id to the list, in this case id='myList'.</li>
+            <li>Handle events from this list by assigning it to a variable, and implementing and registering an event handler.</li>
+            <li>See if the target of the event matches the type we're interested in (ex: li tag).</li>
+            <li>If so, then call methods on the target as needed (change color, etc.)</li>
+        </ol>
+    </p>
+
+    <pre>
+        <code>
+            document.getElementById('myList');
+            function handleClick(event) {
+                const target = event.target;
+                if(target.matches('li')) {
+                    console.log('li was clicked');
+                    target.style.backgroundColor = 'red';
+                }
+            }
+            document.addEventListener('click', handleClick);
+    
+        </code>
+    </pre>
+
+    <script>
+        document.getElementById('myList');
+        function handleClick(event) {
+            const target = event.target;
+            if(target.matches('li')) {
+                console.log('li was clicked');
+                target.style.backgroundColor = 'red';
+            }
+        }
+        document.addEventListener('click', handleClick);
+    </script>
+</body>
+
+</html>
