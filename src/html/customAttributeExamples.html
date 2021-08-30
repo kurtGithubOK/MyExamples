@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Data Attributes</title>
+</head>
+<body>
+    <p>Custom Data Attributes are extra data you can place in an element, that is accessible via Javascript!</p>
+    <div id="div1" data-my-custom-attribute="20" ></div>
+
+    <script>
+        const myDiv = document.getElementById('div1');
+        // Note case change from train case to camel case.
+        const myValue = myDiv.dataset.myCustomAttribute;
+        console.log(myValue)
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

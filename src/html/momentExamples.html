@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <title>JS Moment Examples</title>
+</head>
+
+<body>
+    See console output.
+    <script>
+        // Can console out moment() object and see fields in prototype.
+        console.log('Just moment():', moment());
+        // Defaults to local.  Can call toString() & toISOString():
+        const myMoment = moment();
+        console.log('toString(): ', myMoment.toString()); //  Fri Aug 27 2021 20:17:38 GMT-0700
+        console.log('toISOString(): ', myMoment.toISOString()); // 2021-08-28T03:17:38.632Z
+
+        // Can parse dates into moment object.
+        const myIsoMoment = moment('2021-02-14');
+        console.log('my iso bday:', myIsoMoment.toString())
+
+        // Can parse using a format.
+        const myMomentFromFormat = moment('04-15-2021', 'MM-DD-YYYY');
+        console.log('myMomentFromFormat', myMomentFromFormat.toString())
+
+        // Getters.
+        console.log(myMomentFromFormat.hours(), ' same as: ', myMomentFromFormat.hour())
+
+        // Setters.
+        const moment1 = moment('2021-05-12T15:30', 'YYYY-MM-DDTHH:SS');
+        console.log('Original time:', moment1.toString())
+        
+        moment1.add(4, 'hours')
+        console.log('added 4 hours:', moment1.toString())
+
+    </script>
+
+
+
+</body>
+
+</html>
