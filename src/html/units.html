@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/units.css" />
+    <title>CSS Units!</title>
+</head>
+
+<body>
+    <h1>Units: px, %, vw & vh, em & rem</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Units</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>px</td>
+                <td>pixels - dimension in pixels</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>percent - dimension in percentage of size container (inc. &lt;body&gt;)</td>
+            </tr>
+            <tr>
+                <td>vw & vh</td>
+                <td>view width & height - dimension in percentage (100vw = 100%) of screen size. Ignores container.</td>
+            </tr>
+            <tr>
+                <td>em, rem</td>
+                <td>(root)em - font size as a percentage (1em = 100%) of that specified in container. Root ignores all
+                    containers. Default is 16px.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>1) WITHOUT container (actually body is parent container)</p>
+    <div class="square width-500px">width: 500px;<br />(ALWAYS 500px wide)</div>
+    <br />
+    <div class="square width-50pct">width: 50%<br />Width is 50% of window size, but minus any margins.</div>
+    <br />
+    <div class="square width-50vw">width: .5vw<br />Width is 50% of viewport width.</div>
+    <br />
+    <div class="character">I am 2em, so twice the default font-size of 16px, so 32px.</div>
+    <br />
+    <div class="characterRem">I am 2rem, so twice the default font-size of 16px, so 32px.</div>
+    <br />
+
+
+    <p>2) WITH container of width 400px and font-size 32px:</p>
+    <div class="container"><br/>
+        <div class="square width-500px">width: 500px;<br />(STILL 500px wide)</div>
+        <br />
+        <div class="square width-50pct">width: 50%<br />Width is 50% OF CONTAINER</div>
+        <br />
+        <div class="square width-50vw">width: .5vw<br />Width is STILL 50% of viewport width, ignores containers.</div>
+        <br />
+        <div class="character">I am 2em, too, but since font-size of container is 32px, I'm 64px tall.</div>
+        <br />
+        <div class="characterRem">I am 2rem, the r stands for root so ignore container's font-size, I'm 32px tall.</div>
+    </div>
+
+</body>
+
+</html>

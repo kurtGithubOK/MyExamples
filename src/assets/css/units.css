@@ -1,0 +1,46 @@
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.square {
+    height: 100px;
+    background-color: orange;
+    text-align: center;
+    font-size: 16px;
+}
+
+table,
+td {
+    border: 1px solid blue;
+}
+
+.container {
+    width: 400px;
+    border: 1px solid black;
+    font-size: 32px;
+}
+
+.width-500px {
+    width: 500px;
+}
+
+.width-50pct {
+    width: 50%;
+}
+
+.width-50vw {
+    width: 50vw;
+}
+
+.character {
+    font-size: 2em;
+    width: fit-content;
+    background-color: plum;
+}
+.characterRem {
+    font-size: 2rem;
+    width: fit-content;
+    background-color: plum;
+}
