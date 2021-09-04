@@ -143,25 +143,286 @@
                     console.log(cat) // { name: 'Lucky Chance', color: 'gray' }
                     </pre></code>
                     <code><pre>
-                        code here.
+                        class Cat {
+                            constructor(name, color) {
+                                this.name = name;
+                                this.color = this.color;
+                            }
+                            makeSound() {
+                                console.log('meow!');
+                            }
+                        }
+                        const cat = new Cat('LuckyChance', 'gray');
+                        console.log(cat.makeSound());
                     </pre></code>
                 </td>
             </tr>
             <tr>
-                <td>Title Copy!</td>
+                <td colspan="2">
+                    <h2>Array Functions:</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>.reverse()</td>
                 <td>
                     <code><pre>
-                        code here.
+                        console.log(['a', 'b', 'c', 'd'].reverse()); // [ 'd', 'c', 'b', 'a' ]
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.push()</td>
+                <td>
+                    <code><pre>
+                        let myArray = [1, 2, 3];
+                        myArray.push(4);
+                        console.log(myArray); // [ 1, 2, 3, 4 ]
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.includes()</td>
+                <td>
+                    <code><pre>
+                        const pets = ['cat', 'dog', 'bat'];
+                        console.log(pets.includes('giraffe'));  // false
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.shift() - Removes & returns 1st element.</td>
+                <td>
+                    <code><pre>
+                        const arrayToShift = ['a', 'b', 'c'];
+                        const shiftedElement = arrayToShift.shift();
+                        console.log(shiftedElement); // a
+                        console.log(arrayToShift); // ['b', 'c']
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.unshift(newElement) - Add element to start of array and returns length of new array.</td>
+                <td>
+                    <code><pre>
+                        const arrayToUnshift = [1, 2, 3];
+                        const newArrayLength = arrayToUnshift.unshift(9);
+                        console.log(arrayToUnshift); // [ 9, 1, 2, 3]
+                        console.log(newArrayLength); // 4
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.pop() - Removes LAST element and returns it.</td>
+                <td>
+                    <code><pre>
+                        const arrayToPop = ['dog', 'racoon', 'cat'];
+                        const poppedElement = arrayToPop.pop();
+                        console.log(arrayToPop);
+                        console.log(poppedElement);
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.slice() - Very similar to .substring() -
+                    https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring
+                </td>
+                <td>
+                    <code><pre>
+                        const fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
+                        const firstTwoElements = fruits.slice(0, 2);
+                        console.log(firstTwoElements);  // [ 'Banana', 'Orange' ]
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.splice()
+                    <ul>
+                        <li>1st arg is element index to start at.</li>
+                        <li>2nd arg is how many elements to remove.</li>
+                        <li>3rd arg is what element to add.</li>
+                    </ul>
+                </td>
+                <td>
+                    <code><pre>
+                        const badArray = [1, 2, 'z', 5];
+                        badArray.splice(2, 1, 3, 4);
+                        console.log(badArray); // [ 1, 2, 3, 4, 5 ]
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.concat(array) - Returns array consisting of 2nd array appended to end of 1st array.
+                </td>
+                <td>
+                    <code><pre>
+                        const firstArray = [1, 2, 3];
+                        const secondArray = [4, 5, 6];
+                        console.log(firstArray.concat(secondArray)); // [ 1, 2, 3, 4, 5, 6 ]
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.join(joiningCharacter) - Returns string based on combines array elements separated by a character.
+                    If no arg, joined by commas.</td>
+                <td>
+                    <code><pre>
+                        const arrayToJoin = ['a', 'b', 'c'];
+                        let myString = arrayToJoin.join('-');
+                        console.log(myString); // a-b-c
+                        myString = arrayToJoin.join('');
+                        console.log(myString); // abc
+                        myString = arrayToJoin.join();
+                        console.log(myString); // a,b,c
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>Array.from(iterableObject, mappingFunction) - Creates an array from an array-like or iterable object
+                    (string, object).
+                    Can pass a function which returns the result of running some process on each element.
+                </td>
+                <td>
+                    <code><pre>
+                        const newArray = Array.from('kurt');
+                        console.log(newArray); // [ 'k', 'u', 'r', 't' ]
+                        
+                        const newArray2 = Array.from([1, 2, 3], (element) => {
+                            console.log(element);  // 1   2    3   
+                            return element * 2;
+                        });
+                        console.log(newArray2); // [ 2, 4, 6 ]
+                        
+                        const newArray3 = Array.from(Object.entries({ name: 'kurt', weight: 190}), (element) => {
+                            console.log(element); // [ 'name', 'kurt' ], then [ 'weight', 190 ]
+                            return element + '!';
+                        })
+                        console.log(newArray3); // [ 'name,kurt!', 'weight,190!' ]
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h2>Array Iterators:</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>.every(function) - Returns true if running some function on each element always returns true.</td>
+                <td>
+                    <code><pre>
+                        const allAbove3 = [1, 2, 3, 4, 5].every( (element) => { 
+                            return element > 3;
+                        });  
+                        console.log(allAbove3);  // false
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.filter(function) - Returns ALL elements that return true when processed via function.</td>
+                <td>
+                    <code><pre>
+                        const filteredElements = [1, 2, 3, 4, 5].filter( (element) => {
+                            return element > 2;
+                        });
+                        console.log(filteredElements);  // [3, 4, 5]
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.map() - Applies a function to each element and returns new array.</td>
+                <td>
+                    <code><pre>
+                        const mappedArray = [1, 2, 3].map((element) => {
+                            return element * element;
+                        }); 
+                        console.log(mappedArray); // [ 1, 4, 9 ]
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.reduce() - Applies a function to each element in an array and updates an accumulator with the
+                    result (ex: sums values in an array)</td>
+                <td>
+                    <code><pre>
+                        const total = [1, 2, 3, 4].reduce( (accum, element) => {
+                            return accum += element;
+                        });
+                        console.log(total); // 10
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.sort() - Sorts elements in an array. Notes: If no function is passed, elements are sorted
+                    alphabetically.
+                    Don't sort numbers like this because it does an alpha sort on them!</td>
+                <td>
+                    <code><pre>
+                        const sortedNames = ['abe', 'don', 'bob', 'mary', 'lisa'].sort();
+                        console.log(sortedNames); // [ 'abe', 'bob', 'don', 'lisa', 'mary' ]
+                        
+                        let sortedNumbers = [1, 8, 3, 9, 15].sort();    
+                        console.log(sortedNumbers); // [ 1, 15, 3, 8, 9 ] See?  This is wrong!
+                        
+                        
+                        sortedNumbers = [1, 8, 3, 9, 15].sort( (a, b) => {
+                            return a - b; 
+                        });    
+                        console.log(sortedNumbers); // [ 1, 3, 8, 9, 15 ] <-- Much better.
+                        
+                        const scores = [
+                            { name: 'casey', score: 20},
+                            { name: 'bob', score: 80},
+                            { name: 'kurt', score: 98},
+                            { name: 'aaron', score: 0},
+                        ];
+                        const sortedScores = scores.sort( (obj1, obj2) => {
+                            return obj1.score - obj2.score;
+                        });
+                        console.log(sortedScores);  // [{ name: 'aaron', score: 0 }, { name: 'casey', score: 20 }, { name: 'bob', score: 80 }, { name: 'kurt', score: 98 }]
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td>.find() - Finds the 1st element in an array that returns a truthy when function is applied to it.
+                </td>
+                <td>
+                    <code><pre>
+                        const fruitInventory = [	
+                        {name: 'apples', qty: 2},
+                        {name: 'cherries', qty: 5},
+                        {name: 'bananas', qty: 1}
+                    ]	
+                    const cherries = fruitInventory.find( (element) => {
+                        return element.name === 'cherries';
+                    });
+                    console.log(cherries.qty); // 5
+                    </pre></code>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h2>Loops:</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    4 kinds of loop:
+                    <ul>
+                        <li>Basic for:</li>
+                        <li>for in:</li>
+                        <li>.forEach():</li>
+                        <li>for of:</li>
+                    </ul>
+                </td>
+                <td>
+                    <code><pre>
+                        for(let i=0 ; i&lt;5 ; i++) {
+                            console.log(i);
+                        }
                     </pre></code>
                 </td>
             </tr>
         </tbody>
     </table>
-
-
-
-
-
 
 </body>
 

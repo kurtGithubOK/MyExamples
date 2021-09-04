@@ -1,13 +1,6 @@
 # MyExamples
 
-
-
-
-
-
-
-
-<br/><br/><br/><br/><br/>
+<br/>
 ** THIS IS A SAMPLE README.MD FILE **
 
 Parts to include:
