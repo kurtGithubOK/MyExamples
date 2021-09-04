@@ -408,9 +408,9 @@
                     4 kinds of loop:
                     <ul>
                         <li>Basic for:</li>
-                        <li>for in:</li>
                         <li>.forEach():</li>
                         <li>for of:</li>
+                        <li>for in:</li>
                     </ul>
                 </td>
                 <td>
@@ -418,6 +418,30 @@
                         for(let i=0 ; i&lt;5 ; i++) {
                             console.log(i);
                         }
+                        <br/>
+                        [1, 2, 3].forEach( (element) => {
+                            console.log(element); // 1    2    3
+                        });
+                        <br/>
+                        // Good for iterating over iterables like strings and arrays.
+                        const myString = "Hi!";
+                        for(character of myString) {
+                            console.log(character);  // H   i   !
+                        }
+                        <br/>
+                        // Good for iterating over objects.
+                        const myObject = {name: 'kurt', age: 56};	
+                        for(const key in myObject) {	
+                          // .hasOwnProperty() filters out key-value pairs belonging to prototype (this doesn't seem to need it tho)	
+                          if(myObject.hasOwnProperty(key)) {	
+                            console.log('key:', key)	
+                            console.log('value:', myObject[key]); // Note that myObject.key returns undefined.	
+                          }	
+                        }
+                        // key: name
+                        // value: kurt
+                        // key: age
+                        // value: 56
                     </pre></code>
                 </td>
             </tr>
