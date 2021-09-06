@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/jsExamples.css" />
+    <title>Algorithms</title>
+</head>
+
+<body>
+    <h1>Algorithms</h1>
+    <h3>Algorithms, broken into string, arrays, linked lists, trees, sorting.</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Description:</th>
+                <th>Implementation:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <h2>Strings:</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>String Reversal:</td>
+                <td><code><pre>
+                        const reversed = 'kurt'.split('').reverse().join('');
+                        console.log(reversed); // truk
+                        <br/>
+                        const myStringArray = 'kurt'.split('');
+                        const reversed = myStringArray.reduce( (accum, element) => {
+                            return accum = element + accum;
+                        });
+                        console.log(reversed); // truk
+                </pre></code></td>
+            </tr>
+            <tr>
+                <td>Palindromes:</td>
+                <td><code><pre>
+                        const isPalindrome = (string) => {
+                            for (let i = 0; i &lt; (string.length - 1) / 2; i++) {
+                                if (string[i] != string[string.length - 1 - i]) return false;
+                            }
+                            return true;
+                        };
+                        console.log(isPalindrome('redivider'));
+                        <br/>
+                        const isPalindrome = (string) => {
+                            return string.split('').every( (element, i) => {
+                                return element === string.charAt(string.length-1-i);
+                            });
+                        };
+                        console.log(isPalindrome('redivider'));
+                </pre></code></td>
+            </tr>
+            <tr>
+                <td>Integer Reversal:</td>
+                <td><code><pre>
+                    const myInt = -4321;
+                    const intSign = Math.sign(myInt);
+                    let intAbs = Math.abs(myInt);
+                    intString = intAbs.toString();
+                    intReversedString = intString.split('').reverse().join('');
+                    reversedInt = intReversedString.valueOf() * intSign;
+                    console.log(reversedInt);
+                </pre></code></td>
+            </tr>
+            <tr>
+                <td>Max number of characters:</td>
+                <td><code><pre>
+                    const myString = 'abbcsssc';
+                    let charmap = {};
+                    let mostCommonCharacter = 'none';
+                    let mostCommonCharacterCount = 0;
+                    for (char of myString.split('')) {
+                        charmap[char] = charmap[char]+1 || 1; // chars[char] = chars[char]+1 || 1;
+                        if(charmap[char] > mostCommonCharacterCount) {
+                            mostCommonCharacter = char;
+                            mostCommonCharacterCount = charmap[char];
+                        }
+                    }
+                    console.log('mostCommonCharacter', mostCommonCharacter);  // s
+                    console.log('mostCommonCharacterCount', mostCommonCharacterCount); // 3
+                </pre></code></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h2>Arrays:</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>Array Chunking:</td>
+                <td><code><pre>
+                    const array = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
+                    const chunkSize = 4;
+                    let chunkArray = []
+                    let index = 0;
+                    while (index &lt; array.length) {
+                        let chunk = [];
+                        for (let i = index; i &lt; index + chunkSize; i++) {
+                            if(i&lt;array.length) {
+                                chunk.push(array[i]);
+                            }
+                        }
+                        chunkArray.push(chunk);
+                        index += chunkSize;
+                    }
+                    console.log('chunkArray', chunkArray);  
+                    // [ 'a', 'b', 'c', 'd' ],
+                    // [ 'e', 'f', 'g', 'h' ],
+                    // [ 'i' ]
+
+                    OR BETTER YET ...
+                    const array = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
+                    const chunkSize = 4;
+                    let chunkArray = [];
+                    let index = 0;
+                    while (index < array.length) {
+                        const chunk = array.slice(index, index + chunkSize);
+                        chunkArray.push(chunk);
+                        index += chunkSize;
+                    }
+                    console.log('chunkArray', chunkArray);
+                    // [ 'a', 'b', 'c', 'd' ],
+                    // [ 'e', 'f', 'g', 'h' ],
+                    // [ 'i' ]
+                </pre></code></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
