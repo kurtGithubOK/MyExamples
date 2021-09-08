@@ -89,6 +89,43 @@
                 </pre></code></td>
             </tr>
             <tr>
+                <td>Anagrams</td>
+                <td><code><pre>
+                    // Make character map of each.
+                    const makeMap = (string) => {
+                        let charMap = {};
+                        for (let char of string.split('')) {
+                            if (char != ' ') {
+                                char = char.toLowerCase();
+                                charMap[char] = charMap[char] + 1 || 1;
+                            }
+                        }
+                        return charMap;
+                    };
+                    
+                    const string1 = 'A decimal point';
+                    const string2 = 'Im a dot in place';
+                    
+                    const charMap1 = makeMap(string1);
+                    const charMap2 = makeMap(string2);
+                    
+                    // Verify same number of keys.
+                    if (Object.keys(charMap1).length === Object.keys(charMap2).length) {
+                        // Go thru keys in one and check quantity in other.
+                        for (let char of Object.keys(charMap1)) {
+                            if (charMap1[char] !== charMap2[char]) {
+                                break;
+                            }
+                        }
+                        console.log('anagrams!')
+                    } else {
+                        console.log('diff lengths!')
+                    }
+
+                    Or, just use string.split('').sort().join('');    :)
+                </pre></code></td>
+            </tr>
+            <tr>
                 <td colspan="2">
                     <h2>Arrays:</h2>
                 </td>
@@ -129,6 +166,32 @@
                     // [ 'a', 'b', 'c', 'd' ],
                     // [ 'e', 'f', 'g', 'h' ],
                     // [ 'i' ]
+                </pre></code></td>
+            </tr>
+            <tr>
+                <td>Printing Steps:</td>
+                <td><code><pre>
+                    numSteps = 4;
+                    for(let i=0 ; i&lt;numSteps ; i++) {
+                        let row = '';
+                        for(j=0 ; j&lt;numSteps ; j++) {
+                            if(j&lt;=i) {
+                                row += '#';
+                            }
+                        }
+                        console.log(row)
+                    }
+                    // *
+                    // **
+                    // ***
+                    // ****
+                </pre></code></td>
+            </tr>
+            <tr>
+                <td>Copy Me!</td>
+                <td><code><pre>
+
+                    copy me!
                 </pre></code></td>
             </tr>
         </tbody>
