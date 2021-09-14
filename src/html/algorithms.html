@@ -188,6 +188,75 @@
                 </pre></code></td>
             </tr>
             <tr>
+                <td>Draw a pyramid:</td>
+                <td><code><pre>
+                    const pyramid = (numRows) => {
+                        const numColumns = 2 * numRows - 1;
+                        const middleIndex = Math.floor(numColumns / 2);
+                        for (let i = 0; i < numRows; i++) {
+                            leftBoundsIndex = middleIndex - i;
+                            rightBoundsIndex = middleIndex + i;
+                            let output = '';
+                            for (let j = 0; j < numColumns; j++) {
+                                if (j >= leftBoundsIndex && j <= rightBoundsIndex) {
+                                    output += '#';
+                                } else {
+                                    output += ' ';
+                                }
+                            }
+                            console.log(output)
+                        }
+                    }
+                    pyramid(3);
+                    //   #
+                    //  ###
+                    // #####
+                </pre></code></td>
+            </tr>
+            <tr>
+                <td>Fibonacci:</td>
+                <td><code><pre>
+                    // fibonaci // 1, 2, 3, 5, 8, 13, ...
+                    const makeFibonaci = (nthNumber) => {
+                        let fibArray = [];
+                        // Hard code 1st 2 values.
+                        fibArray.push(1);
+                        fibArray.push(2);
+                        for(let i=2 ; i&lt;nthNumber ; i++) {
+                            // Calculate next based on previous two.
+                            const nextNumber = fibArray[i-2] + fibArray[i-1];
+                            fibArray.push(nextNumber);
+                        }
+                        return fibArray;
+                    }
+                    console.log(makeFibonaci(5));
+                </pre></code></td>
+            </tr>
+            <tr>
+                <td>Queue Implementation:</td>
+                <td><code><pre>
+                    // Implement Queue using JS.
+                    // Queue has a list of elements, an add(...) and a remove().
+                    class Queue {
+                        constructor() {
+                            this.queue = [];
+                        };
+                        add(element) {
+                            this.queue.push(element);
+                        }
+                        remove() {
+                            this.queue.pop();
+                        }
+                    }
+                    const queue = new Queue();
+                    queue.add(7);
+                    queue.add(3);
+                    queue.add(6);
+                    queue.remove();
+                    console.log(queue.queue); // [ 7, 3 ]
+                </pre></code></td>
+            </tr>
+            <tr>
                 <td>Copy Me!</td>
                 <td><code><pre>
 

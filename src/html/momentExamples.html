@@ -38,6 +38,11 @@
         moment1.add(4, 'hours')
         console.log('added 4 hours:', moment1.toString())
 
+        // Unix:  Make moment from unix timestamp, then display in format M-DD-YYYY.
+        const unixTimestamp = 1631566800;
+        const unixMoment = moment(unixTimestamp, 'X');
+        console.log('unix:', unixMoment.format('M-DD-YYYY'));
+
     </script>
 
 
