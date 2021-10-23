@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 const PORT = 3001;
 
-// Builtin middleware.    Allows access to url/filename directly such as simpletextfile.txt.  
+// Builtin middleware.    Allows access to url/filename directly such as simpletextfile.txt.  Ex: http://localhost:3000/images/kitten.jpg
 app.use(express.static('public'));
 
 // '/' rtns given string.  How to return just a string.
